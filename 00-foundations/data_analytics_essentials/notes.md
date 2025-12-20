@@ -38,3 +38,34 @@ Cybersecurity data is often log-based and semi-structured.
 ## Key Insight
 Asking the right questions about data is more important than using advanced tools.
 
+
+## Data Cleaning and Preparation
+
+Data cleaning is the process of fixing missing values, duplicates,
+incorrect formats, and inconsistencies before analysis.
+
+### Common Issues
+- Missing values
+- Duplicates
+- Incorrect data types
+- Inconsistent formats
+- Outliers
+
+### Handling Missing Data
+Options include removing rows, filling with statistical values,
+or using domain-specific defaults.
+
+### Outliers
+Outliers should be investigated before removal, especially in
+security datasets where rare events may indicate attacks.
+
+## Data Transformation Concepts
+
+Transformation prepares data for analysis through:
+- Aggregation
+- Normalization
+- Feature creation
+- Filtering and sorting
+
+Excel transformations represent logical operations that later
+map to Python-based workflows.
