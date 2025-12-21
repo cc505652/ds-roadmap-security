@@ -69,3 +69,10 @@ Transformation prepares data for analysis through:
 
 Excel transformations represent logical operations that later
 map to Python-based workflows.
+
+## Statistics in Data Analytics
+
+Statistical measures help summarize and interpret data distributions.
+In skewed datasets, median and variance are often more informative than mean.
+
+Security datasets are typically imbalanced, making naive accuracy misleading.
