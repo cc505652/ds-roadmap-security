@@ -12,3 +12,8 @@
 - Completed Data Analytics Essentials Module 3 & 4
 - Studied data cleaning techniques and challenges
 - Reviewed data transformation concepts from Excel
+
+## Dec 21
+- Completed Data Analytics Essentials Module 5 (Statistics)
+- Studied distributions and class imbalance
+- Started CICIDS Phase 1: dataset understanding
