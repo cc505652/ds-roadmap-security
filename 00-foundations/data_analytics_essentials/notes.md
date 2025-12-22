@@ -76,3 +76,11 @@ Statistical measures help summarize and interpret data distributions.
 In skewed datasets, median and variance are often more informative than mean.
 
 Security datasets are typically imbalanced, making naive accuracy misleading.
+
+## Databases, SQL, and Ethics
+
+Relational databases support analytics by enforcing structure and consistency.
+SQL enables filtering and aggregation to answer focused questions.
+
+Ethics and bias awareness are essential to avoid misleading or harmful conclusions,
+especially in security analytics where decisions have real consequences.
