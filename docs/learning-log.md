@@ -17,3 +17,8 @@
 - Completed Data Analytics Essentials Module 5 (Statistics)
 - Studied distributions and class imbalance
 - Started CICIDS Phase 1: dataset understanding
+
+## Dec 22
+- Completed Data Analytics Essentials (Modules 6–10 + Final Exam)
+- Studied databases, SQL concepts, and ethics
+- Continued CICIDS Phase 1 with disciplined data cleaning
