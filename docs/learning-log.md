@@ -25,9 +25,14 @@
 
 ## Dec 23
 - Started Data Science Essentials with Python
-- Built Python DataFrame foundations and visualization basics
+- Built Python DataFrame foundations and basic visualization skills
+- Initiated Python Data Science EDA project
+  - Dataset sampling and locking
+  - Problem framing and data understanding
+  - Conservative initial data cleaning
 - Completed CICIDS 2017 Phase 1: EDA as a security analyst
   - Dataset understanding and framing
   - Initial data cleaning and sanity checks
   - Attack vs normal traffic comparison
+
 
