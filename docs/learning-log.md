@@ -22,3 +22,12 @@
 - Completed Data Analytics Essentials (Modules 6–10 + Final Exam)
 - Studied databases, SQL concepts, and ethics
 - Continued CICIDS Phase 1 with disciplined data cleaning
+
+## Dec 23
+- Started Data Science Essentials with Python
+- Built Python DataFrame foundations and visualization basics
+- Completed CICIDS 2017 Phase 1: EDA as a security analyst
+  - Dataset understanding and framing
+  - Initial data cleaning and sanity checks
+  - Attack vs normal traffic comparison
+
