@@ -35,4 +35,10 @@
   - Initial data cleaning and sanity checks
   - Attack vs normal traffic comparison
 
+ ## Dec 24
+- Completed Data Cleaning badge (Python DS)
+- Practiced cleaning decisions and trade-offs
+- Started CICIDS Phase 2 with feature behavior analysis
+
+
 
