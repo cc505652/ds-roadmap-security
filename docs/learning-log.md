@@ -39,10 +39,13 @@
 - Performed structured exploratory data analysis on Python DS project
   - Generated data-backed insights
   - Documented assumptions, limitations, and trade-offs
-- Completed Data Cleaning badge (Data Science Essentials with Python)
-  - Practiced conservative cleaning decisions and imputation trade-offs
+- Completed Data Cleaning and Data Visualization badges
+  (Data Science Essentials with Python)
+  - Practiced conservative cleaning decisions
+  - Built minimal, purpose-driven visualizations
 - Started CICIDS 2017 Phase 2: Data Scientist thinking
   - Feature behavior analysis for normal vs attack traffic
+
 
 
 
