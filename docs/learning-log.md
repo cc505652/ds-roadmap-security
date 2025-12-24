@@ -36,9 +36,13 @@
   - Attack vs normal traffic comparison
 
  ## Dec 24
-- Completed Data Cleaning badge (Python DS)
-- Practiced cleaning decisions and trade-offs
-- Started CICIDS Phase 2 with feature behavior analysis
+- Performed structured exploratory data analysis on Python DS project
+  - Generated data-backed insights
+  - Documented assumptions, limitations, and trade-offs
+- Completed Data Cleaning badge (Data Science Essentials with Python)
+  - Practiced conservative cleaning decisions and imputation trade-offs
+- Started CICIDS 2017 Phase 2: Data Scientist thinking
+  - Feature behavior analysis for normal vs attack traffic
 
 
 
