@@ -35,14 +35,13 @@
   - Initial data cleaning and sanity checks
   - Attack vs normal traffic comparison
 
- ## Dec 24
+## Dec 24
 - Performed structured exploratory data analysis on Python DS project
   - Generated data-backed insights
   - Documented assumptions, limitations, and trade-offs
-- Completed Data Cleaning and Data Visualization badges
+- Completed Data Cleaning, Data Visualization, and Data Modeling chapters
   (Data Science Essentials with Python)
-  - Practiced conservative cleaning decisions
-  - Built minimal, purpose-driven visualizations
+  - Practiced conservative cleaning, visualization choices, and model framing
 - Started CICIDS 2017 Phase 2: Data Scientist thinking
   - Feature behavior analysis for normal vs attack traffic
 
