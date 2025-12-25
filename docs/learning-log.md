@@ -45,6 +45,18 @@
 - Started CICIDS 2017 Phase 2: Data Scientist thinking
   - Feature behavior analysis for normal vs attack traffic
 
-
-
-
+## Dec 25
+- Completed Python Data Science project
+  - Finalized exploratory analysis and insights
+  - Ensured reproducibility and clean project structure
+- Completed Data Science Essentials with Python certification
+- Completed CICIDS 2017 Phase 2: Data Scientist Thinking
+  - Performed feature behavior analysis (pre-ML)
+  - Conducted correlation and assumption testing
+  - Identified misleading signals and noisy features
+  - Documented why correlation ≠ detection signal
+  - Synthesized Phase 2 insights and limitations
+  - Explicitly stated what the data supports and what it does not
+  - Framed implications for detection-oriented reasoning
+  - Locked Phase 2 with an insights summary notebook
+- Prepared a clean transition toward SOC & detection perspective
