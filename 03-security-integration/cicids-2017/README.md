@@ -113,9 +113,13 @@ Detection requires multi-feature, context-aware reasoning
 🚧 What This Project Does Not Do (By Design)
 
 ❌ No machine learning models
+
 ❌ No feature ranking or selection
+
 ❌ No scaling or normalization
+
 ❌ No train/test splits
+
 ❌ No accuracy, F1, or ROC claims
 
 These are intentionally deferred until detection logic and SOC constraints are clearly framed.
