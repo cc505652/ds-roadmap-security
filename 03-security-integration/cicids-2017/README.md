@@ -1,4 +1,5 @@
 🔍 Phase 1 Breakdown — EDA as a Security Analyst
+
 📘 Notebook 1: Dataset Understanding
 
 Focus: Structure, scope, and caveats
@@ -51,6 +52,7 @@ Key insight:
 No single feature cleanly separates attack and benign traffic.
 
 🟡 Phase 2 Breakdown — Data Scientist Thinking (Pre-ML)
+
 📘 Notebook 4: Feature Behavior Analysis
 
 Focus: Evaluating individual feature stability and usefulness
