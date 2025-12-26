@@ -60,3 +60,11 @@
   - Framed implications for detection-oriented reasoning
   - Locked Phase 2 with an insights summary notebook
 - Prepared a clean transition toward SOC & detection perspective
+
+## Dec 26
+- Initiated Phase 3 (SOC & Detection Perspective) for the CICIDS 2017 project
+- Reframed analytical insights into detection and alerting considerations
+- Evaluated why single-feature and volume-based signals lead to false positives
+- Documented detection trade-offs and alert fatigue risks
+- Began documenting SOC alerting and triage reasoning
+- Focused on analyst workflow, uncertainty, and context gaps
