@@ -68,3 +68,14 @@
 - Documented detection trade-offs and alert fatigue risks
 - Began documenting SOC alerting and triage reasoning
 - Focused on analyst workflow, uncertainty, and context gaps
+
+ ## Dec 27
+- Completed Phase 3 (SOC & Detection Perspective) for the CICIDS 2017 project
+- Mapped analytical insights into a SOC workflow
+  - Traced alert generation, triage, and escalation flow
+  - Documented Tier 1 and Tier 2 analyst perspectives
+  - Identified common false-positive scenarios and context gaps
+- Explicitly analyzed dataset limitations in real SOC environments
+  - Lack of asset context, user identity, and enrichment signals
+- Reframed detection as a decision-support problem, not a classification task
+- Finalized SOC-focused documentation to close Phase 3
