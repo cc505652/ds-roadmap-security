@@ -79,3 +79,12 @@
   - Lack of asset context, user identity, and enrichment signals
 - Reframed detection as a decision-support problem, not a classification task
 - Finalized SOC-focused documentation to close Phase 3
+
+## Dec 28
+- Completed Phase 3 (SOC & Detection Perspective) for the CICIDS 2017 project
+- Built a detection view notebook to communicate detection intuition
+  - Illustrated why simple thresholds fail due to overlap and variance
+  - Demonstrated the need for contextual enrichment in SOC decisions
+- Reinforced detection as a decision-support problem, not a classification task
+- Added a communication-focused layer to complement analytical and SOC reasoning
+- Closed Phase 3 with a complete analysis → detection → workflow narrative
