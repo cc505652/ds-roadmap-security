@@ -4,6 +4,7 @@ This repository documents a progressive, discipline-first security analytics pro
 The project deliberately evolves from analysis → reasoning → SOC detection thinking, avoiding premature modeling or metric-driven claims.
 
 🟢 Phase 1 — EDA as a Security Analyst
+
 📘 Notebook 1: Dataset Understanding
 
 Focus: Structure, scope, and caveats
@@ -56,6 +57,7 @@ Key insight:
 No single feature cleanly separates attack and benign traffic.
 
 🟡 Phase 2 — Data Scientist Thinking (Pre-ML)
+
 📘 Notebook 4: Feature Behavior Analysis
 
 Focus: Evaluating individual feature stability and usefulness
