@@ -1,4 +1,5 @@
 🟢 Phase 1 — EDA as a Security Analyst
+
 📘 Notebook 1: Dataset Understanding
 Focus: Structure, scope, and caveats
 
@@ -36,6 +37,7 @@ Key insight:
 No single feature cleanly separates attack and benign traffic.
 
 🟡 Phase 2 — Data Scientist Thinking (Pre-ML)
+
 📘 Notebook 4: Feature Behavior Analysis
 Focus: Evaluating individual feature stability and usefulness
 
@@ -70,6 +72,7 @@ Key takeaway:
 Premature modeling would create false confidence without improving detection reliability.
 
 🟠 Phase 3 — SOC & Detection Perspective
+
 Phase 3 reframes the project from data analysis to operational SOC thinking.
 
 📄 detection-notes.md
