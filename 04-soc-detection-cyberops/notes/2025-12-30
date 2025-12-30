@@ -1,0 +1,30 @@
+# Daily Log — Dec 30, 2025
+
+## Focus
+CyberOps Associate — Day 2  
+Host operating system visibility and detection relevance.
+
+---
+
+## Modules Covered
+- Module 3: Windows Operating System
+- Module 4: Linux Overview
+
+---
+
+## Key Takeaways
+- Operating systems provide detailed but noisy evidence.
+- Host logs are strongest during investigation, not initial detection.
+- Authentication and privilege usage are primary host-level signals.
+
+---
+
+## Detection-Oriented Insights
+- Host data confirms alerts raised by network behavior.
+- Legitimate administrative activity can generate false positives.
+- Correlation across data sources is critical.
+
+---
+
+## Status
+Day 2 completed and documented.
