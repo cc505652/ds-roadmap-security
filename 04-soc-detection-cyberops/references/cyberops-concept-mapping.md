@@ -1,62 +1,69 @@
 # CyberOps Concept Mapping
 
 This file captures detection-relevant concepts extracted from the
-Cisco CyberOps Associate course.  
-It serves as a reference layer feeding SOC alert design and incident reasoning.
+Cisco CyberOps Associate course.
+It feeds SOC alert modeling and incident reasoning.
 
 ---
 
 ## Module 1 – The Danger
 
 ### Threat Actors
-- External attackers targeting exposed services
-- Insiders abusing legitimate access
+- External attackers
+- Insiders with legitimate access
 - Organized cybercrime groups
 - Advanced Persistent Threats (APTs)
-
-### Motivations
-- Financial gain
-- Espionage
-- Disruption
-- Persistence within networks
 
 ### Impact Types
 - Data exfiltration
 - Service disruption
 - Lateral movement
-- Long-term undetected access
+- Long-term persistence
 
-### Detection-Relevant Insight
-SOC detection focuses on **observable effects of attacker behavior**, not attacker intent.
+### Detection Insight
+Detection focuses on **observable behavior**, not attacker intent.
 
 ---
 
 ## Module 2 – Fighters in the War Against Cybercrime
 
-### Modern SOC Purpose
+### SOC Mission
 - Continuous monitoring
-- Detection of abnormal activity
-- Prioritization of actionable alerts
-- Coordination of incident response
+- Detection of anomalies
+- Alert triage
+- Incident response coordination
 
 ### Defender Mindset
 - Assume compromise is possible
-- Prioritize detection over perfect prevention
-- Reduce dwell time and impact
+- Prioritize detection and response
+- Reduce dwell time and blast radius
 
-### SOC Roles (High Level)
-- Tier 1: Alert monitoring and triage
-- Tier 2: Investigation and validation
-- Tier 3: Advanced analysis and threat hunting
-
-### Detection-Relevant Insight
-The SOC exists to **enable response**, not just generate alerts.
+### Detection Insight
+A SOC exists to **enable response**, not just generate alerts.
 
 ---
 
-## Day 1 Summary
+## Modules 3–4 – Host Operating Systems
 
-- Threat actors vary widely, but detection relies on behavior.
-- SOC effectiveness depends on alert quality, not quantity.
-- Detection logic must balance visibility with operational reality.
+### Windows Visibility
+- Successful and failed authentication events
+- Process creation and termination
+- Service installation and modification
+- Limited file access auditing
 
+### Linux Visibility
+- SSH login attempts
+- sudo privilege escalation
+- Process execution
+- File permission changes
+
+### Detection Insight
+Host logs provide **confirmation and context** but rarely indicate intent alone.
+They are most effective when correlated with network activity.
+
+---
+
+## Day 2 Summary
+- Operating systems generate useful evidence but with limited context.
+- Host data strengthens investigations, not standalone detection.
+- Correlation with network signals is essential.
