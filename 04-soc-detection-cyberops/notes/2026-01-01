@@ -1,0 +1,29 @@
+# Daily Log — Jan 1, 2026
+
+## Focus
+CyberOps Associate — Network fundamentals and services.
+
+---
+
+## Modules Covered
+- Modules 5–10: Network protocols, IP, ARP, transport layer, network services
+- Network Fundamentals Checkpoint Exam
+
+---
+
+## Key Takeaways
+- Networks exhibit predictable baseline behavior.
+- Protocol misuse and abnormal patterns are early detection signals.
+- Network services provide strong visibility into attacker activity.
+
+---
+
+## Detection-Oriented Insights
+- Reconnaissance often manifests as abnormal connection behavior.
+- Network telemetry is essential for early-stage detection.
+- Payload inspection is less important than behavioral analysis.
+
+---
+
+## Status
+Day 3 completed and checkpoint exam attempted.
