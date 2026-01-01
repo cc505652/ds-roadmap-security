@@ -8,62 +8,67 @@ It feeds SOC alert modeling and incident reasoning.
 
 ## Module 1 – The Danger
 
-### Threat Actors
-- External attackers
-- Insiders with legitimate access
-- Organized cybercrime groups
-- Advanced Persistent Threats (APTs)
-
-### Impact Types
-- Data exfiltration
-- Service disruption
-- Lateral movement
-- Long-term persistence
-
-### Detection Insight
-Detection focuses on **observable behavior**, not attacker intent.
+Threat actors generate observable effects rather than directly visible intent.
+Detection focuses on those effects.
 
 ---
 
 ## Module 2 – Fighters in the War Against Cybercrime
 
-### SOC Mission
-- Continuous monitoring
-- Detection of anomalies
-- Alert triage
-- Incident response coordination
-
-### Defender Mindset
-- Assume compromise is possible
-- Prioritize detection and response
-- Reduce dwell time and blast radius
-
-### Detection Insight
-A SOC exists to **enable response**, not just generate alerts.
+SOCs exist to:
+- monitor continuously
+- detect anomalies
+- triage alerts
+- enable response
 
 ---
 
 ## Modules 3–4 – Host Operating Systems
 
-### Windows Visibility
-- Successful and failed authentication events
-- Process creation and termination
-- Service installation and modification
-- Limited file access auditing
+Host logs provide:
+- authentication evidence
+- privilege usage
+- process activity
 
-### Linux Visibility
-- SSH login attempts
-- sudo privilege escalation
-- Process execution
-- File permission changes
-
-### Detection Insight
-Host logs provide **confirmation and context** but rarely indicate intent alone.
-They are most effective when correlated with network activity.
+They are most effective when correlated with network behavior.
 
 ---
 
-## Day 2 Summary
-- Operating systems generate useful evidence but with limited context.
-- Host data strengthens investigations, not standalone detection.
-- Correlation with network signals is essential.
+## Modules 5–10 – Network Behavior & Services
+
+### Normal Network Behavior
+- Predictable protocol usage
+- Stable client–server communication patterns
+- Consistent service access paths
+
+### Protocol-Level Visibility
+- IP addressing and routing patterns
+- TCP session establishment and teardown
+- UDP usage for specific services
+
+### Address Resolution (ARP)
+- IP-to-MAC mapping within a subnet
+- ARP requests are broadcast and predictable
+
+### Network Services
+- DNS: name resolution
+- DHCP: dynamic address assignment
+- NAT: address translation boundaries
+- Email, HTTP, file services: application-layer patterns
+
+---
+
+## Detection-Relevant Insights
+
+- Network anomalies often appear **before** host compromise is confirmed.
+- Abnormal connection patterns indicate reconnaissance or lateral movement.
+- ARP and protocol misuse can signal spoofing or scanning activity.
+- Service misuse is often easier to detect than payload content.
+
+---
+
+## Day 3 Summary
+
+- Networks exhibit strong baseline behavior.
+- Deviations from baseline are primary detection signals.
+- Network telemetry is foundational for SOC alerting.
