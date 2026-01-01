@@ -13,3 +13,22 @@ Limitations:
 - Administrative automation may resemble attacker behavior
 - Shared accounts reduce attribution accuracy
 
+### 2. Network Reconnaissance
+Indicators:
+- Port scanning activity
+- Excessive connection attempts
+- Sequential IP or port probing
+
+Relevant Data Sources:
+- Network flow logs
+- Firewall logs
+- IDS/IPS telemetry
+
+Protocol-Level Signals:
+- Incomplete TCP handshakes
+- Abnormal UDP traffic patterns
+- Excessive ARP requests
+
+Limitations:
+- Legitimate scanning tools may appear malicious
+- High-volume services can create noise
