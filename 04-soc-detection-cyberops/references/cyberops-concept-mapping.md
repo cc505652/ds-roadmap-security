@@ -2,73 +2,71 @@
 
 This file captures detection-relevant concepts extracted from the
 Cisco CyberOps Associate course.
-It feeds SOC alert modeling and incident reasoning.
+It informs SOC alerting logic and incident reasoning.
 
 ---
 
-## Module 1 – The Danger
+## Modules 1–2 — Threat Landscape & SOC Mission
 
-Threat actors generate observable effects rather than directly visible intent.
-Detection focuses on those effects.
-
----
-
-## Module 2 – Fighters in the War Against Cybercrime
-
-SOCs exist to:
-- monitor continuously
-- detect anomalies
-- triage alerts
-- enable response
+Detection focuses on observable behavior.
+SOCs exist to enable response, not perfect prevention.
 
 ---
 
-## Modules 3–4 – Host Operating Systems
+## Modules 3–4 — Host Visibility
 
-Host logs provide:
-- authentication evidence
-- privilege usage
-- process activity
-
-They are most effective when correlated with network behavior.
+Host logs provide authentication and process evidence.
+They are strongest when correlated with network signals.
 
 ---
 
-## Modules 5–10 – Network Behavior & Services
+## Modules 5–10 — Network Behavior
 
-### Normal Network Behavior
-- Predictable protocol usage
-- Stable client–server communication patterns
-- Consistent service access paths
-
-### Protocol-Level Visibility
-- IP addressing and routing patterns
-- TCP session establishment and teardown
-- UDP usage for specific services
-
-### Address Resolution (ARP)
-- IP-to-MAC mapping within a subnet
-- ARP requests are broadcast and predictable
-
-### Network Services
-- DNS: name resolution
-- DHCP: dynamic address assignment
-- NAT: address translation boundaries
-- Email, HTTP, file services: application-layer patterns
+Networks exhibit strong baseline behavior.
+Deviations indicate reconnaissance, misuse, or lateral movement.
 
 ---
 
-## Detection-Relevant Insights
+## Modules 11–12 — Network Devices & Security Infrastructure
 
-- Network anomalies often appear **before** host compromise is confirmed.
-- Abnormal connection patterns indicate reconnaissance or lateral movement.
-- ARP and protocol misuse can signal spoofing or scanning activity.
-- Service misuse is often easier to detect than payload content.
+### Network Devices
+- Switches and routers control traffic paths
+- Wireless introduces additional attack surfaces
+
+### Security Devices
+- Firewalls enforce policy boundaries
+- IDS/IPS detect known and anomalous patterns
+- Proxies mediate application access
+
+### Detection Insight
+Security devices generate alerts based on **policy violations and anomalies**,
+not confirmed compromise.
 
 ---
 
-## Day 3 Summary
+## Modules 13–14 — Attackers and Common Attacks
 
-- Networks exhibit strong baseline behavior.
-- Deviations from baseline are primary detection signals.
-- Network telemetry is foundational for SOC alerting.
+### Attacker Techniques
+- Reconnaissance
+- Initial access
+- Privilege escalation
+- Lateral movement
+- Persistence
+
+### Common Attacks
+- Malware delivery
+- Network scanning
+- Denial of Service
+- Evasion techniques
+
+### Detection Insight
+Most attacks reuse common techniques.
+Detection targets **patterns**, not individual tools.
+
+---
+
+## Day 4 Summary
+
+- Security infrastructure defines visibility boundaries.
+- Attack techniques produce repeatable signals.
+- Detection relies on understanding both attacker behavior and defensive controls.
