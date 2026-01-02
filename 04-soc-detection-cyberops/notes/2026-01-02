@@ -1,0 +1,31 @@
+# Daily Log — Jan 2, 2026
+
+## Focus
+CyberOps Associate — network security infrastructure and attack patterns.
+
+---
+
+## Modules Covered
+- Module 11: Network Communication Devices
+- Module 12: Network Security Infrastructure
+- Module 13: Attackers and Their Tools
+- Module 14: Common Threats and Attacks
+
+---
+
+## Key Takeaways
+- Security devices enforce policy, not certainty.
+- Attack techniques reuse common behavioral patterns.
+- Correlation across alerts increases confidence.
+
+---
+
+## Detection-Oriented Insights
+- Infrastructure alerts indicate policy stress points.
+- Repeated attacker behavior raises detection confidence.
+- Understanding attacker workflows improves alert design.
+
+---
+
+## Status
+Day 4 completed and documented.
