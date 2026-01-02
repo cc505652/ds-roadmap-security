@@ -32,3 +32,17 @@ Protocol-Level Signals:
 Limitations:
 - Legitimate scanning tools may appear malicious
 - High-volume services can create noise
+
+Infrastructure-Based Alerts:
+- Firewall policy violations
+- IDS/IPS signature matches
+- Repeated blocked connection attempts
+
+Attack Pattern Indicators:
+- Reconnaissance followed by access attempts
+- Multiple attack techniques from same source
+- Evasion behavior after initial detection
+
+Severity Considerations:
+- Repeated behavior increases confidence
+- Correlated alerts are higher value than isolated signals
