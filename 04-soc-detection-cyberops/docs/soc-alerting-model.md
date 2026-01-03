@@ -46,3 +46,13 @@ Attack Pattern Indicators:
 Severity Considerations:
 - Repeated behavior increases confidence
 - Correlated alerts are higher value than isolated signals
+
+Monitoring-Based Alert Signals:
+- Sudden deviation from baseline traffic patterns
+- Abnormal connection rates or session behavior
+- Repeated protocol anomalies over time
+
+Design Considerations:
+- Alerts must include context, not just counts
+- Single events rarely justify escalation
+- Correlation improves confidence
