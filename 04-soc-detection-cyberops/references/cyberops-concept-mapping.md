@@ -1,8 +1,7 @@
 # CyberOps Concept Mapping
 
 This file captures detection-relevant concepts extracted from the
-Cisco CyberOps Associate course.
-It informs SOC alerting logic and incident reasoning.
+Cisco CyberOps Associate course and maps them to SOC alert reasoning.
 
 ---
 
@@ -16,57 +15,45 @@ SOCs exist to enable response, not perfect prevention.
 ## Modules 3–4 — Host Visibility
 
 Host logs provide authentication and process evidence.
-They are strongest when correlated with network signals.
+They are most effective when correlated with network signals.
 
 ---
 
 ## Modules 5–10 — Network Behavior
 
-Networks exhibit strong baseline behavior.
-Deviations indicate reconnaissance, misuse, or lateral movement.
+Networks exhibit predictable baseline behavior.
+Deviations often indicate reconnaissance or misuse.
 
 ---
 
-## Modules 11–12 — Network Devices & Security Infrastructure
+## Modules 11–14 — Infrastructure & Attacks
 
-### Network Devices
-- Switches and routers control traffic paths
-- Wireless introduces additional attack surfaces
+Security devices generate alerts based on policy violations.
+Attack techniques produce repeatable behavioral patterns.
 
-### Security Devices
-- Firewalls enforce policy boundaries
-- IDS/IPS detect known and anomalous patterns
-- Proxies mediate application access
+---
+
+## Modules 15–16 — Monitoring & Foundational Attacks
+
+### Network Monitoring
+- Continuous collection of traffic and events
+- Visibility into flows, connections, and anomalies
+- Monitoring alone does not imply detection
+
+### Foundational Attacks
+- IP spoofing
+- ARP poisoning
+- TCP session manipulation
+- Protocol misuse
 
 ### Detection Insight
-Security devices generate alerts based on **policy violations and anomalies**,
-not confirmed compromise.
+Monitoring provides **raw signals**.
+Detection requires interpretation, thresholds, and context.
 
 ---
 
-## Modules 13–14 — Attackers and Common Attacks
+## Day 5 Summary
 
-### Attacker Techniques
-- Reconnaissance
-- Initial access
-- Privilege escalation
-- Lateral movement
-- Persistence
-
-### Common Attacks
-- Malware delivery
-- Network scanning
-- Denial of Service
-- Evasion techniques
-
-### Detection Insight
-Most attacks reuse common techniques.
-Detection targets **patterns**, not individual tools.
-
----
-
-## Day 4 Summary
-
-- Security infrastructure defines visibility boundaries.
-- Attack techniques produce repeatable signals.
-- Detection relies on understanding both attacker behavior and defensive controls.
+- Monitoring generates volume, not answers.
+- Foundational attacks exploit protocol trust.
+- Poor alert logic converts visibility into noise.
