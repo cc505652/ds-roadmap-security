@@ -1,0 +1,29 @@
+# Daily Log — Jan 3, 2026
+
+## Focus
+CyberOps Associate — monitoring, alerts, and foundational attacks.
+
+---
+
+## Modules Covered
+- Module 15: Network Monitoring and Tools
+- Module 16: Attacking the Foundation
+
+---
+
+## Key Takeaways
+- Monitoring generates signals, not decisions.
+- Protocol behavior can easily resemble attacks.
+- Poor alert design creates false positives.
+
+---
+
+## Detection-Oriented Insights
+- Context is essential for alert confidence.
+- Repeated anomalies matter more than single events.
+- Monitoring volume must be filtered by logic.
+
+---
+
+## Status
+Day 5 completed and documented.
