@@ -56,3 +56,14 @@ Design Considerations:
 - Alerts must include context, not just counts
 - Single events rarely justify escalation
 - Correlation improves confidence
+
+### 3. Authentication Anomalies
+Access Control Abuse Indicators:
+- Successful logins followed by unusual activity
+- Privilege usage inconsistent with user role
+- Excessive access to sensitive services
+
+Detection Challenges:
+- Legitimate credentials reduce alert confidence
+- Role context is required for accuracy
+
