@@ -1,0 +1,30 @@
+# Daily Log — Jan 4, 2026
+
+## Focus
+CyberOps Associate — enterprise services, defense concepts, and access control.
+
+---
+
+## Modules Covered
+- Module 17: Attacking What We Do
+- Module 18: Understanding Defense
+- Module 19: Access Control
+
+---
+
+## Key Takeaways
+- Attackers frequently abuse legitimate enterprise services.
+- Defense-in-depth assumes control failure.
+- Access control misuse is harder to detect than access denial.
+
+---
+
+## Detection-Oriented Insights
+- Successful authentication does not imply benign intent.
+- Role context is critical for alert confidence.
+- Detection must focus on behavior after access.
+
+---
+
+## Status
+Day 6 completed and documented.
