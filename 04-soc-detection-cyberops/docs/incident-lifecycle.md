@@ -55,6 +55,13 @@ Access Control Investigation Focus:
 - Compare actions against assigned user role
 - Identify privilege escalation after login
 
+Supporting Investigation Context:
+- Threat intelligence enrichment
+- Endpoint telemetry
+- Historical activity patterns
+
+These sources improve confidence but do not replace primary detection signals.
+
 Key Challenge:
 Legitimate credentials reduce confidence and slow escalation decisions.
 
