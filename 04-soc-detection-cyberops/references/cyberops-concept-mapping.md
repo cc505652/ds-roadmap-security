@@ -62,8 +62,32 @@ Detection must focus on abnormal usage, not just blocked attempts.
 
 ---
 
-## Day 6 Summary
+## Modules 20–22 — Threat Intelligence, Cryptography, and Endpoints
 
-- Enterprise services are high-value attack surfaces.
-- Defense-in-depth relies on layered visibility.
+### Threat Intelligence
+- External context about known threats
+- Indicators of compromise (IOCs)
+- Tactics, techniques, and procedures (TTPs)
+
+Use:
+- Enrichment of alerts
+- Prioritization of investigations
+
+Limitation:
+- Often reactive and time-lagged
+
+### Cryptography
+- Encryption protects confidentiality
+- Limits payload inspection
+- Shifts detection to metadata and behavior
+
+### Endpoint Protection
+- Visibility into host behavior
+- Malware and process-level indicators
+- Strong investigative value
+
+### Detection Implication
+Threat intelligence and endpoint data **support detection**
+but rarely replace network-based alerting.
+
 - Access control failures are central to modern incidents.
