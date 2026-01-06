@@ -91,3 +91,25 @@ Threat intelligence and endpoint data **support detection**
 but rarely replace network-based alerting.
 
 - Access control failures are central to modern incidents.
+
+## Modules 23–25 — Vulnerabilities, Technologies, and Security Data
+
+### Endpoint Vulnerability Assessment
+- Asset profiling and exposure identification
+- Vulnerabilities represent potential, not incidents
+- CVSS expresses severity, not likelihood of exploitation
+
+### Security Technologies
+- Firewalls, IDS/IPS, EDR, and monitoring tools
+- Each technology produces different data types
+- No single tool provides complete visibility
+
+### Network Security Data
+- Network flow records
+- Firewall and IDS logs
+- Endpoint and host logs
+
+### Detection Implication
+Security data represents **observations**, not conclusions.
+Effective detection correlates multiple data sources over time.
+
