@@ -52,6 +52,19 @@ Monitoring-Based Alert Signals:
 - Abnormal connection rates or session behavior
 - Repeated protocol anomalies over time
 
+Vulnerability-Aware Alert Context:
+- Alerts should consider asset exposure
+- Known vulnerabilities increase alert priority
+- Vulnerability presence does not confirm exploitation
+
+Data Integration:
+- Asset inventory
+- Vulnerability assessment results
+- Network and host telemetry
+
+Design Principle:
+Vulnerability data enriches alerts but should not trigger them alone.
+
 Design Considerations:
 - Alerts must include context, not just counts
 - Single events rarely justify escalation
