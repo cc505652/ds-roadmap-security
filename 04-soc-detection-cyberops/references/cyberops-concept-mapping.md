@@ -113,3 +113,24 @@ but rarely replace network-based alerting.
 Security data represents **observations**, not conclusions.
 Effective detection correlates multiple data sources over time.
 
+## Modules 26–28 — Alert Evaluation, Security Data Handling, and Incident Response
+
+### Evaluating Alerts
+- Alert confidence increases through correlation
+- Asset context influences prioritization
+- Analyst review determines escalation
+
+### Working with Security Data
+- Data is reviewed iteratively
+- Historical context matters
+- Investigation is hypothesis-driven
+
+### Digital Forensics and Incident Response
+- Evidence handling must preserve integrity
+- Incident response follows defined phases
+- Lessons learned improve future detection
+
+### Detection Insight
+Effective SOC operations close the loop:
+alert → investigation → response → improvement.
+
