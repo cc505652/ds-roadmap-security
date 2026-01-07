@@ -80,3 +80,16 @@ Detection Challenges:
 - Legitimate credentials reduce alert confidence
 - Role context is required for accuracy
 
+### 4. Alert Evaluation
+Alert Evaluation Criteria:
+- Signal confidence (single vs correlated events)
+- Asset criticality
+- Behavioral consistency over time
+
+Escalation Guidance:
+- Isolated events remain informational
+- Correlated indicators justify investigation
+- Repeated patterns increase severity
+
+Analyst Consideration:
+Alert value depends on actionability, not volume.
