@@ -107,6 +107,13 @@ Outcomes:
 - Reduced future risk
 
 ---
+Evidence and Closure:
+- Preserve logs and artifacts
+- Document timeline and analyst decisions
+- Validate containment effectiveness
+
+Outcome:
+Post-incident review feeds detection improvement and reduces future response time.
 
 ## Key Insight
 
