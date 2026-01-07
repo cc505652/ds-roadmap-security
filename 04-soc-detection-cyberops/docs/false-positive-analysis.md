@@ -39,6 +39,11 @@ alerts that do not represent real security incidents.
 - Reduced trust in alerts
 - Missed real incidents
 
+Alert Evaluation Perspective:
+- Alerts should be reviewed in context, not isolation
+- Historical behavior reduces false escalation
+- Analyst judgment is essential for final decisions
+
 ---
 
 ## Key Insight
