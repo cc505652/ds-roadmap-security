@@ -1,0 +1,21 @@
+# Never commit dataset
+data/
+raw/
+**/data/raw/
+**/*.pcap
+**/*.pcapng
+
+# Large CICIDS CSVs
+**/Monday-WorkingHours*.csv
+**/Tuesday-WorkingHours*.csv
+**/Wednesday*.csv
+**/Thursday*.csv
+**/Friday*.csv
+
+# Notebook junk
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Local editor configs
+.vscode/
