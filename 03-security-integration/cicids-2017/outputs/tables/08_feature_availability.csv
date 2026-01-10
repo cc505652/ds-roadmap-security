@@ -1,0 +1,20 @@
+feature,exists_in_dataset
+ACK Flag Cnt,False
+Active Mean,True
+Bwd Pkt Len Mean,False
+Down/Up Ratio,True
+Flow Bytes/s,True
+Flow Duration,True
+Flow IAT Mean,True
+Flow IAT Std,True
+Flow Pkts/s,False
+Fwd Pkt Len Mean,False
+PSH Flag Cnt,False
+Packet Length Mean,True
+Packet Length Std,True
+RST Flag Cnt,False
+SYN Flag Cnt,False
+Tot Bwd Pkts,False
+Tot Fwd Pkts,False
+TotLen Fwd Pkts,False
+URG Flag Cnt,False
