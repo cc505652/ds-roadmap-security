@@ -1,0 +1,45 @@
+# Daily Log — Jan 13, 2026
+
+## Focus
+CICIDS Phase 3.5 — Notebook 09 (False Positive Stress Test)
+
+---
+
+## Work Completed
+- Resumed Phase 3.5 after a break due to college/other work
+- Implemented BENIGN baseline stress testing pipeline
+- Computed baseline quantiles for mapped SOC signal features
+- Estimated false-positive rates for naive thresholding approaches (p95/p99/p99.9)
+
+---
+
+## Notebook Progress
+### Notebook 09 — False Positive Stress Test
+- Loaded BENIGN-heavy baseline dataset (Monday Working Hours)
+- Filtered BENIGN-only flows for baselining
+- Extracted SOC candidate features from mapping table:
+  - `08_signal_candidate_mapping.csv`
+- Generated:
+  - baseline quantile table
+  - false positive rate table
+- Visualized BENIGN distributions for highest-noise features
+
+---
+
+## Key Outputs / Artifacts
+- `outputs/tables/09_baseline_quantiles.csv`
+- `outputs/tables/09_false_positive_rates.csv`
+- `notebooks/09_false_positive_stress_test.ipynb`
+
+---
+
+## Key Learnings
+- Some network telemetry features are inherently noisy in BENIGN traffic
+- Naive single-feature thresholds can generate heavy analyst fatigue
+- Reliable SOC detection requires context/correlation instead of one-metric alerting
+
+---
+
+## Status
+Notebook 09 completed and locked.
+Ready to proceed to Notebook 10 (Context Dependency + Correlation).
