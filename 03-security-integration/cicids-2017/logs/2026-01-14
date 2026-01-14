@@ -1,0 +1,42 @@
+# Daily Log — Jan 14, 2026
+
+## Focus
+CICIDS Phase 3.5 — Notebook 10 (Context Dependency + Correlation + Tradeoff Validation)
+
+---
+
+## Work Completed
+- Finalized Phase 3.5 capstone notebook focused on SOC detection engineering (no ML)
+- Performed correlation analysis on BENIGN baseline features to identify redundancy/noise risk
+- Identified context failures: BENIGN flows exceeding q99 thresholds (single-feature false positives)
+- Exported context failure examples showing BENIGN behavior that appears “attack-like”
+- Loaded ATTACK-only dataset slice (PortScan + DDoS) and computed Attack Hit Rate (TPR)
+- Built BENIGN vs ATTACK tradeoff table:
+  - BENIGN false positive rate (FPR) vs ATTACK hit rate
+- Generated and saved tradeoff scatterplot for visual SOC evaluation
+- Documented why single-feature alerts collapse without identity/asset baselines:
+  - missing entity baselines, criticality, time patterns, business context
+
+---
+
+## Key Outputs / Artifacts
+- `notebooks/10_context_dependency_analysis.ipynb`
+- `outputs/tables/10_correlation_matrix.csv`
+- `outputs/tables/10_context_failure_summary.csv`
+- `outputs/tables/10_context_failure_examples.csv`
+- `outputs/tables/10_tradeoff_table.csv`
+- `outputs/figures/10_tradeoff_scatter.png`
+
+---
+
+## Key Learnings
+- Many network telemetry features are correlated (redundant); treating them independently increases noise
+- BENIGN traffic can exceed “high” thresholds (q99), proving strong context dependency
+- Some signals produce poor tradeoffs (high FPR + low TPR), making them operationally unusable alone
+- Stable SOC detections require identity/asset baselines and correlation rules, not single metrics
+
+---
+
+## Status
+Phase 3.5 completed and locked.
+SOC detection validation artifacts are now portfolio-ready and commit-ready.
