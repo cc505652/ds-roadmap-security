@@ -1,230 +1,193 @@
-🔍 CICIDS 2017 — Security Analytics → SOC Detection Project
+# 🔍 CICIDS 2017 — Security Analytics → SOC Detection Project
 
-This repository documents a progressive, discipline-first security analytics project built on the CICIDS 2017 dataset.
-The project deliberately evolves from analysis → reasoning → SOC detection thinking, avoiding premature modeling or metric-driven claims.
+This repository documents a progressive, discipline-first security analytics project built on the CICIDS 2017 dataset. The project deliberately evolves from **analysis → reasoning → SOC detection thinking**, avoiding premature modeling or metric-driven claims.
 
-🟢 Phase 1 — EDA as a Security Analyst
+---
 
-📘 Notebook 1: Dataset Understanding
+## 🟢 Phase 1 — EDA as a Security Analyst
 
-Focus: Structure, scope, and caveats
+### 📘 Notebook 1: Dataset Understanding  
+**Focus:** Structure, scope, and caveats
 
-Key aspects:
+**Key aspects:**
+- Multi-day traffic aggregation across enterprise scenarios  
+- Label distribution inspection and imbalance awareness  
+- Identification of dataset quirks (e.g., column naming inconsistencies)  
+- Explicit acknowledgment of simulation constraints and limitations  
 
-Multi-day traffic aggregation across enterprise scenarios
+**Scope control:** No data modification is performed.
 
-Label distribution inspection and imbalance awareness
+---
 
-Identification of dataset quirks (e.g., column naming inconsistencies)
+### 🧹 Notebook 2: Data Cleaning  
+**Focus:** Making the data trustworthy without distortion
 
-Explicit acknowledgment of simulation constraints and limitations
+**Steps taken:**
+- Column name normalization  
+- Handling infinite values  
+- Conservative missing value removal  
+- Removal of exact duplicate records  
 
-Scope control:
-No data modification is performed.
+**Key principle:** Rare events are preserved wherever possible to avoid suppressing attack behavior.
 
-🧹 Notebook 2: Data Cleaning
+---
 
-Focus: Making the data trustworthy without distortion
+### 📊 Notebook 3: Basic EDA (Analyst Perspective)  
+**Focus:** Behavioral understanding
 
-Steps taken:
+**Analysis includes:**
+- Baseline distributions of normal traffic  
+- Attack vs normal distribution comparisons  
+- Emphasis on variance, spread, and overlap  
+- Explicit avoidance of correlation analysis and modeling  
 
-Column name normalization
+**Key insight:** No single feature cleanly separates attack and benign traffic.
 
-Handling infinite values
+---
 
-Conservative missing value removal
+## 🟡 Phase 2 — Data Scientist Thinking (Pre-ML)
 
-Removal of exact duplicate records
+### 📘 Notebook 4: Feature Behavior Analysis  
+**Focus:** Evaluating individual feature stability and usefulness
 
-Key principle:
-Rare events are preserved wherever possible to avoid suppressing attack behavior.
+**Analysis includes:**
+- Careful selection of interpretable, SOC-relevant features  
+- Feature-wise comparison using summary statistics and robust plots  
+- Identification of noisy, unstable, and potentially misleading features  
 
-📊 Notebook 3: Basic EDA (Analyst Perspective)
+**Key outcome:** Visual separation does not guarantee statistical usefulness.
 
-Focus: Behavioral understanding
+---
 
-Analysis includes:
+### 📘 Notebook 5: Correlation & Assumption Testing  
+**Focus:** Challenging intuitive assumptions
 
-Baseline distributions of normal traffic
+**Analysis includes:**
+- Global correlation analysis  
+- Class-wise (normal vs attack) correlation comparison  
+- Identification of volume-driven and redundant relationships  
 
-Attack vs normal distribution comparisons
+**Key insight:** Correlation often reflects shared scale effects rather than detection signal.
 
-Emphasis on variance, spread, and overlap
+---
 
-Explicit avoidance of correlation analysis and modeling
+### 📘 Notebook 6: Insights Summary & Pre-Detection Reasoning  
+**Focus:** Synthesis and restraint
 
-Key insight:
-No single feature cleanly separates attack and benign traffic.
+**Highlights:**
+- Consolidated Phase 2 insights  
+- Explicit documentation of misleading signals  
+- Clear articulation of what the data does not support  
 
-🟡 Phase 2 — Data Scientist Thinking (Pre-ML)
+**Key takeaway:** Premature modeling would create false confidence without improving detection reliability.
 
-📘 Notebook 4: Feature Behavior Analysis
+---
 
-Focus: Evaluating individual feature stability and usefulness
-
-Analysis includes:
-
-Careful selection of interpretable, SOC-relevant features
-
-Feature-wise comparison using summary statistics and robust plots
-
-Identification of noisy, unstable, and potentially misleading features
-
-Key outcome:
-Visual separation does not guarantee statistical usefulness.
-
-📘 Notebook 5: Correlation & Assumption Testing
-
-Focus: Challenging intuitive assumptions
-
-Analysis includes:
-
-Global correlation analysis
-
-Class-wise (normal vs attack) correlation comparison
-
-Identification of volume-driven and redundant relationships
-
-Key insight:
-Correlation often reflects shared scale effects rather than detection signal.
-
-📘 Notebook 6: Insights Summary & Pre-Detection Reasoning
-
-Focus: Synthesis and restraint
-
-Highlights:
-
-Consolidated Phase 2 insights
-
-Explicit documentation of misleading signals
-
-Clear articulation of what the data does not support
-
-Key takeaway:
-Premature modeling would create false confidence without improving detection reliability.
-
-🟠 Phase 3 — SOC & Detection Perspective
+## 🟠 Phase 3 — SOC & Detection Perspective
 
 Phase 3 reframes the project from data analysis to operational SOC thinking.
 
-📄 detection-notes.md
+### 📄 detection-notes.md
+- Reinterprets analytical findings as detection signals  
+- Explains why single-feature and volume-based alerts fail  
+- Emphasizes false positives, alert fatigue, and analyst trust  
 
-Reinterprets analytical findings as detection signals
+### 📄 soc-mapping.md
+- Maps signals into a SOC workflow  
+- Covers alert generation, Tier-1 triage, escalation, and uncertainty  
+- Explicitly documents dataset limitations in real SOC environments  
 
-Explains why single-feature and volume-based alerts fail
+### 📘 Notebook 7: Detection View
+- Visual, communication-focused notebook  
+- Demonstrates why thresholds break due to overlap and variance  
+- Reinforces detection as a decision-support problem, not classification  
 
-Emphasizes false positives, alert fatigue, and analyst trust
+**Outcome:** The project now reflects how intrusion data is actually consumed in SOC operations.
 
-📄 soc-mapping.md
+---
 
-Maps signals into a SOC workflow
-
-Covers alert generation, Tier-1 triage, escalation, and uncertainty
-
-Explicitly documents dataset limitations in real SOC environments
-
-📘 Notebook 7: Detection View
-
-Visual, communication-focused notebook
-
-Demonstrates why thresholds break due to overlap and variance
-
-Reinforces detection as a decision-support problem, not classification
-
-Outcome:
-The project now reflects how intrusion data is actually consumed in SOC operations.
-
-🔵 Phase 3.5 — SOC Detection Stress Testing (Planned / In Progress)
+## 🔵 Phase 3.5 — SOC Detection Stress Testing *(Complete)*
 
 Phase 3.5 stress-tests detection thinking without introducing ML.
 
-08_signal_candidate_mapping.ipynb
-09_false_positive_stress_test.ipynb
-10_context_dependency_analysis.ipynb
+### 📘 Notebooks
+- **Notebook 8:** Signal Candidate Mapping  
+  `08_signal_candidate_mapping.ipynb`
+- **Notebook 9:** False Positive Stress Test  
+  `09_false_positive_stress_test.ipynb`
+- **Notebook 10:** Context Dependency Analysis  
+  `10_context_dependency_analysis.ipynb`
 
+### 🎯 Purpose
+- Map features → detection signal candidates (conceptual alerts)  
+- Stress-test detection logic using false-positive scenarios  
+- Demonstrate why detection collapses without context (identity / asset baselines / history)
 
-Purpose:
+**Key takeaway:** Detection quality is dominated by *context and operational constraints*, not model scores.
 
-Map features → hypothetical detection signals
+---
 
-Evaluate false-positive behavior under reasonable thresholds
+## ⚠️ Key Observations (Across Phases 1–3.5)
 
-Demonstrate why detection depends on context, not isolated metrics
+- The dataset is highly imbalanced, reflecting real SOC conditions  
+- Attack traffic shows greater variance, but not clean separability  
+- Significant overlap exists between normal and attack behaviors  
+- Correlation and variance alone are insufficient for detection  
+- False positives dominate naive threshold-based detection  
+- Detection requires multi-feature, context-aware reasoning and baselining  
 
-This phase focuses on breaking naive detection logic, not optimizing it.
+---
 
-⚠️ Key Observations (Across Phases 1–3)
+## 🚧 What This Project Does Not Do (By Design)
 
-The dataset is highly imbalanced, reflecting real SOC conditions
-
-Attack traffic shows greater variance, not clean separability
-
-Significant overlap exists between normal and attack behaviors
-
-Correlation and variance alone are insufficient for detection
-
-Detection requires multi-feature, context-aware reasoning
-
-🚧 What This Project Does Not Do (By Design)
-
-❌ No machine learning models
-
-❌ No feature ranking or selection
-
-❌ No scaling or normalization
-
-❌ No train/test splits
-
-❌ No accuracy, F1, or ROC claims
+❌ No machine learning models  
+❌ No feature ranking or selection  
+❌ No scaling or normalization  
+❌ No train/test splits  
+❌ No accuracy, F1, or ROC claims  
 
 These are intentionally deferred until detection logic and SOC constraints are fully understood.
 
-🔜 Future Extensions
+---
 
-Phase 4: Cloud ingestion & security architecture framing
+## 🔜 Future Extensions
 
-Phase 5: Minimal, restraint-driven anomaly detection
+- **Phase 4:** Cloud ingestion & security architecture framing  
+- **Phase 5:** Minimal, restraint-driven anomaly detection  
 
-If ML is introduced, it will be supporting, not central.
+If ML is introduced, it will be supporting—not central.
 
-📌 Why This Project Matters
+---
+
+## 📌 Why This Project Matters
 
 This repository demonstrates:
-
-disciplined analytical progression
-
-respect for real-world security data complexity
-
-understanding of SOC realities and trade-offs
-
-ability to resist overclaiming results
+- disciplined analytical progression  
+- respect for real-world security data complexity  
+- understanding of SOC realities and trade-offs  
+- ability to resist overclaiming results  
 
 These qualities are critical for:
+- SOC analysts  
+- cybersecurity engineers  
+- security data analysts  
+- applied data roles in security domains  
 
-SOC analysts
+---
 
-cybersecurity engineers
+## 🧾 Dataset
 
-security data analysts
+**Source:** CICIDS 2017 (Canadian Institute for Cybersecurity)  
+**Nature:** Simulated enterprise traffic with labeled attack scenarios  
+**Disclaimer:** All findings are interpreted with dataset limitations in mind.
 
-applied data roles in security domains
+---
 
-🧾 Dataset
+## ✅ Current Status
 
-Source: CICIDS 2017 (Canadian Institute for Cybersecurity)
-
-Nature: Simulated enterprise traffic with labeled attack scenarios
-
-Disclaimer: All findings are interpreted with dataset limitations in mind
-
-✅ Current Status
-
-Phase 1 — Complete
-
-Phase 2 — Complete
-
-Phase 3 — Complete
-
-Phase 3.5 — Planned / In Progress
+- Phase 1 — Complete ✅  
+- Phase 2 — Complete ✅  
+- Phase 3 — Complete ✅  
+- Phase 3.5 — Complete ✅  
 
 The project continues to evolve incrementally with a security-first, SOC-aligned mindset.
