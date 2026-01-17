@@ -14,6 +14,10 @@ This design explicitly incorporates lessons from:
 ---
 
 ## 1) Objective
+## Architecture Diagram
+
+![SOC Telemetry Pipeline](diagrams/soc_telemetry_pipeline.png)
+
 
 Design a SOC telemetry and detection pipeline that:
 - Supports scalable ingestion of flow/log data
