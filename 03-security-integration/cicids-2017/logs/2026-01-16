@@ -1,0 +1,54 @@
+# Daily Log — Jan 16, 2026
+
+## Focus
+
+CICIDS Phase 4 — Day 13 (Context Enrichment + Baselining Layer Design)
+
+---
+
+## Work Completed
+
+* Continued Phase 4 by designing the **context enrichment and baselining layer** for a SOC telemetry pipeline (cloud-agnostic)
+* Translated Phase 3.5 findings into architectural requirements:
+
+  * detection collapses without identity/asset baselines/history
+  * BENIGN extremes + overlap cause threshold-based false positives
+* Authored `context-enrichment.md` documenting:
+
+  * identity context, asset criticality, network zoning, destination rarity
+  * historical baselines (quantiles/IQR), peer-group baselines, temporal baselines
+  * baseline storage strategy + refresh schedule + drift handling
+* Designed SOC-safe detection gating logic to reduce false positives:
+
+  * time gating (backup/patch windows)
+  * role gating (server vs workstation behavior)
+  * destination gating (rare external destinations weighted higher)
+  * alert rate limiting + deduplication
+* Defined an alert explanation format to improve analyst trust:
+
+  * baseline deviation reason + entity context + time context + corroboration
+* Integrated SOC feedback loop design:
+
+  * analyst TP/FP outcomes inform rule tuning + baseline exclusions
+
+---
+
+## Key Outputs / Artifacts
+
+* `context-enrichment.md`
+
+---
+
+## Key Learnings
+
+* Baselines must be **entity-specific** and **robust** (quantiles over means) to avoid false-positive inflation
+* Peer grouping and time awareness are essential for meaningful “normal” behavior definitions
+* Detection quality improves more from **context enrichment and alert hygiene** than from stricter thresholds
+* Architectures must support feedback loops; otherwise detection logic decays over time
+
+---
+
+## Status
+
+Phase 4 progressing strongly.
+Context + baselining layer is documented and portfolio-ready; ready to proceed to pipeline threat model and security controls (Day 14).
