@@ -1,0 +1,57 @@
+# Daily Log — Jan 15, 2026
+
+## Focus
+
+CICIDS Phase 4 — Cloud-Agnostic SOC Telemetry Pipeline Architecture (System Design + Diagram)
+
+---
+
+## Work Completed
+
+* Initiated Phase 4 to evolve CICIDS from dataset analysis into real-world SOC system design
+* Designed an end-to-end **cloud-agnostic telemetry pipeline** to operationalize CICIDS-style detections
+* Authored architecture document emphasizing detection realism and SOC constraints:
+
+  * telemetry sources → collection/transport → ingestion buffer/stream
+  * parsing + normalization + quality checks
+  * hot/cold storage + retention strategy
+  * enrichment layer (identity, asset baselines, historical context)
+  * detection layer (multi-signal reasoning, baselines, explainable alerts)
+  * alerting + case management + investigation loop
+* Incorporated Phase 3.5 learnings directly into design:
+
+  * false positives dominate naive thresholds
+  * context dependency is the central detection limitation
+  * detection framed as **decision-support**, not classification
+* Added governance and security controls to pipeline design:
+
+  * least privilege access
+  * encryption in transit/at rest
+  * audit logging and tamper resistance
+  * immutable retention for long-term evidence
+* Generated a **high-definition architecture diagram** for improved readability and portfolio presentation
+
+  * corrected layout to ensure all transport-stage bullet points are inside the stage block
+
+---
+
+## Key Outputs / Artifacts
+
+* `architecture.md`
+* `diagrams/soc_telemetry_pipeline.png`
+
+---
+
+## Key Learnings
+
+* SOC detection systems require architecture-level thinking: ingestion reliability, storage strategy, and integrity controls matter as much as detection logic
+* Context enrichment (identity/asset baselines/history) is a first-class architectural layer, not an optional enhancement
+* Detection must be explainable and workflow-aligned to preserve analyst trust and reduce alert fatigue
+* Without feedback loops (analyst outcomes), detection rules and baselines decay over time
+
+---
+
+## Status
+
+Phase 4 started and documented.
+Architecture artifact + diagram are portfolio-ready and commit-ready.
