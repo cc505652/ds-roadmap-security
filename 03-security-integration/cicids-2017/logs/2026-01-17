@@ -1,0 +1,65 @@
+# Daily Log — Jan 17, 2026
+
+## Focus
+
+CICIDS Phase 4 — Day 14 (SOC Telemetry Pipeline Threat Model + Security Controls)
+
+---
+
+## Work Completed
+
+* Continued Phase 4 by threat-modeling the SOC telemetry pipeline and defining required governance controls (cloud-agnostic)
+* Authored `controls-and-threat-model.md` to secure the telemetry → detection → investigation system end-to-end
+* Defined SOC pipeline security objectives:
+
+  * integrity (evidence trustworthiness)
+  * availability (burst + adversarial resilience)
+  * confidentiality (sensitive log access)
+  * auditability (traceability of actions and changes)
+* Identified core adversarial threats against detection pipelines:
+
+  * telemetry suppression (SOC blinding)
+  * telemetry tampering (evidence manipulation)
+  * baseline poisoning (slow drift)
+  * alert flooding (SOC DoS)
+  * rule store privilege abuse (detection bypass)
+  * log access abuse (data exfiltration)
+* Designed stage-wise controls across the pipeline:
+
+  * source/agent integrity and heartbeat monitoring
+  * authenticated transport and replay resistance
+  * ingestion backpressure + dead-letter quarantine
+  * schema validation + drift detection
+  * hot/cold storage protection with immutability (WORM) and retention governance
+  * bounded baseline refresh and enrichment integrity validation
+  * rule governance with approvals, versioning, rollback, and audit trail
+* Defined SOC governance model and access controls:
+
+  * role separation (SOC analyst vs detection engineer vs ingestion operator vs admin)
+  * least privilege + MFA + session controls
+  * change approval workflows for high-impact detection modifications
+* Added “monitoring the monitoring system” layer:
+
+  * alerts for missing telemetry, lag spikes, drift anomalies, rule changes, alert storms, and unusual query behavior
+
+---
+
+## Key Outputs / Artifacts
+
+* `controls-and-threat-model.md`
+
+---
+
+## Key Learnings
+
+* Detection reliability depends on telemetry integrity; attackers may target logging systems before detection logic
+* Baselining systems are vulnerable to slow poisoning and require bounded, auditable updates
+* Rule stores and suppression configurations are high-value targets and need strict governance + rollback
+* SOC pipelines must monitor themselves; missing telemetry is a security incident signal, not just ops noise
+
+---
+
+## Status
+
+Phase 4 progressed with secure architecture maturity.
+Threat model + controls artifact is portfolio-ready and commit-ready; Phase 4 now represents full pipeline design including governance and adversarial resilience.
