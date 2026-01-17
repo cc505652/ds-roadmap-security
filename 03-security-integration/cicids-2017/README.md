@@ -1,12 +1,12 @@
-CICIDS 2017 — Security Analytics → SOC Detection Project
+# CICIDS 2017 — Security Analytics → SOC Detection Project
 
-This repository documents a progressive, discipline-first security analytics project built on the CICIDS 2017 dataset. The project deliberately evolves from **analysis → reasoning → SOC detection thinking**, avoiding premature modeling or metric-driven claims.
+This repository documents a progressive, discipline-first security analytics project built on the CICIDS 2017 dataset. The work intentionally evolves from **analysis → reasoning → SOC detection thinking**, avoiding premature modeling or metric-driven claims.
 
 ---
 
 ## 🟢 Phase 1 — EDA as a Security Analyst
 
-### 📘 Notebook 1: Dataset Understanding  
+### 📘 Notebook 1: Dataset Understanding
 **Focus:** Structure, scope, and caveats
 
 **Key aspects:**
@@ -19,7 +19,7 @@ This repository documents a progressive, discipline-first security analytics pro
 
 ---
 
-### 🧹 Notebook 2: Data Cleaning  
+### 🧹 Notebook 2: Data Cleaning
 **Focus:** Making the data trustworthy without distortion
 
 **Steps taken:**
@@ -32,7 +32,7 @@ This repository documents a progressive, discipline-first security analytics pro
 
 ---
 
-### 📊 Notebook 3: Basic EDA (Analyst Perspective)  
+### 📊 Notebook 3: Basic EDA (Analyst Perspective)
 **Focus:** Behavioral understanding
 
 **Analysis includes:**
@@ -47,7 +47,7 @@ This repository documents a progressive, discipline-first security analytics pro
 
 ## 🟡 Phase 2 — Data Scientist Thinking (Pre-ML)
 
-### 📘 Notebook 4: Feature Behavior Analysis  
+### 📘 Notebook 4: Feature Behavior Analysis
 **Focus:** Evaluating individual feature stability and usefulness
 
 **Analysis includes:**
@@ -59,7 +59,7 @@ This repository documents a progressive, discipline-first security analytics pro
 
 ---
 
-### 📘 Notebook 5: Correlation & Assumption Testing  
+### 📘 Notebook 5: Correlation & Assumption Testing
 **Focus:** Challenging intuitive assumptions
 
 **Analysis includes:**
@@ -71,7 +71,7 @@ This repository documents a progressive, discipline-first security analytics pro
 
 ---
 
-### 📘 Notebook 6: Insights Summary & Pre-Detection Reasoning  
+### 📘 Notebook 6: Insights Summary & Pre-Detection Reasoning
 **Focus:** Synthesis and restraint
 
 **Highlights:**
@@ -102,7 +102,7 @@ Phase 3 reframes the project from data analysis to **operational SOC thinking**.
 - Demonstrates why thresholds break due to overlap and variance  
 - Reinforces detection as a decision-support problem, not classification  
 
-**Outcome:** The project now reflects how intrusion data is actually consumed in SOC operations.
+**Outcome:** The project reflects how intrusion data is actually consumed inside SOC workflows.
 
 ---
 
@@ -111,11 +111,11 @@ Phase 3 reframes the project from data analysis to **operational SOC thinking**.
 Phase 3.5 stress-tests detection thinking **without introducing ML**.
 
 ### 📘 Notebooks
-- **Notebook 8:** Signal Candidate Mapping  
+- Notebook 8: Signal Candidate Mapping  
   `08_signal_candidate_mapping.ipynb`
-- **Notebook 9:** False Positive Stress Test  
+- Notebook 9: False Positive Stress Test  
   `09_false_positive_stress_test.ipynb`
-- **Notebook 10:** Context Dependency Analysis  
+- Notebook 10: Context Dependency Analysis  
   `10_context_dependency_analysis.ipynb`
 
 ### 🎯 Purpose
@@ -131,42 +131,44 @@ Phase 3.5 stress-tests detection thinking **without introducing ML**.
 
 Phase 4 evolves CICIDS from “dataset analysis” into **system design for real SOC pipelines**.
 
-> Personal note: This phase is intentionally cloud-agnostic — the goal is to get the system design right first, then map it to platforms later.
+*Personal note:* this phase is intentionally cloud-agnostic — the goal was to get the system design right first, and only then map to platforms.
 
 ### 📄 architecture.md
-- Designed an end-to-end SOC telemetry pipeline:
-  - telemetry sources → collection/transport → ingestion stream
-  - parsing + normalization + quality checks
-  - hot/cold storage + retention strategy
-  - enrichment + baselining layer
-  - detection layer + alerting + investigation
-- Integrated Phase 3.5 lessons directly into architecture:
-  - false positives dominate naive detection
-  - context dependency must be solved structurally
+Designed an end-to-end SOC telemetry pipeline:
+- telemetry sources → collection/transport → ingestion stream  
+- parsing + normalization + quality checks  
+- hot/cold storage + retention strategy  
+- enrichment + baselining layer  
+- detection layer + alerting + investigation  
+
+Integrated Phase 3.5 lessons directly into architecture:
+- false positives dominate naive detection  
+- context dependency must be solved structurally  
 
 ### 📄 context-enrichment.md
-- Defined enrichment and baselining as a first-class SOC layer:
-  - identity context + asset criticality + network zone
-  - historical baselines (quantiles/IQR), peer-group baselines
-  - time awareness (business hours, backup windows)
-  - alert gating + deduplication + rate-limiting
+Defined enrichment and baselining as a first-class SOC layer:
+- identity context + asset criticality + network zone  
+- historical baselines (quantiles/IQR), peer-group baselines  
+- time awareness (business hours, backup windows)  
+- alert gating + deduplication + rate-limiting  
 
 ### 📄 controls-and-threat-model.md
-- Threat-modeled the SOC telemetry pipeline as a high-value target:
-  - SOC blinding (telemetry suppression)
-  - evidence tampering
-  - baseline poisoning
-  - alert flooding (SOC DoS)
-  - rule store privilege abuse
-  - log exfiltration risks
-- Defined governance controls:
-  - RBAC separation, audit trails, immutability (WORM), integrity monitoring
-  - “monitoring the monitoring system” design
+Threat-modeled the SOC telemetry pipeline as a high-value target:
+- SOC blinding (telemetry suppression)  
+- evidence tampering  
+- baseline poisoning  
+- alert flooding (SOC DoS)  
+- rule store privilege abuse  
+- log exfiltration risks  
+
+Defined governance controls:
+- RBAC separation, audit trails, immutability (WORM), integrity monitoring  
+- “monitoring the monitoring system” design  
 
 ### 🖼️ Architecture Diagram
 - `diagrams/soc_telemetry_pipeline.png`
 
-**Outcome:** The project now demonstrates realistic SOC pipeline design + governance + adversarial resilience.
+**Outcome:** The project demonstrates realistic SOC pipeline design + governance + adversarial resilience.
 
 ---
 
@@ -175,12 +177,10 @@ Phase 4 evolves CICIDS from “dataset analysis” into **system design for real
 Maps the cloud-agnostic architecture into practical service equivalents.
 
 ### 📄 cloud-mapping.md
-- Pipeline stage → Azure mapping (SIEM-oriented approach)
-- Pipeline stage → AWS mapping (data lake / detection pipeline approach)
-- Control placement:
-  - immutability, RBAC/IAM, auditability
-- Operational failure modes:
-  - ingestion lag, schema drift, alert storms, abnormal log access
+- Pipeline stage → Azure mapping (SIEM-oriented approach)  
+- Pipeline stage → AWS mapping (data lake / detection pipeline approach)  
+- Control placement: immutability, RBAC/IAM, auditability  
+- Operational failure modes: ingestion lag, schema drift, alert storms, abnormal log access  
 
 **Outcome:** Vendor-neutral architecture with clear cloud translation readiness.
 
@@ -209,8 +209,8 @@ These are intentionally deferred until detection logic and SOC constraints are f
 ---
 
 ## 🔜 Future Extensions
-- **Phase 5:** Minimal, restraint-driven anomaly detection  
-- **Phase 6 (Optional):** Hands-on cloud implementation of pipeline subset  
+- Phase 5: Minimal, restraint-driven anomaly detection  
+- Phase 6 (Optional): Hands-on cloud implementation of pipeline subset  
 
 If ML is introduced, it will be supporting—not central.
 
