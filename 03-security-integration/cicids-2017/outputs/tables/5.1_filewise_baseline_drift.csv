@@ -1,0 +1,41 @@
+source_file,feature,count,median,p95,p99
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,Flow Duration,97718,171388.5,98069042.14999999,117592884.33
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,Flow Duration,127537,30964.0,115527631.6,118158788.52
+Friday-WorkingHours-Morning.pcap_ISCX.csv,Flow Duration,189067,31085.0,115262935.6,118209336.36
+Monday-WorkingHours.pcap_ISCX.csv,Flow Duration,529918,31303.0,102215317.09999974,117744477.75999999
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,Flow Duration,288566,306.0,99491294.25,117816677.64999999
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,Flow Duration,168186,31213.0,115637607.75,118161029.85
+Tuesday-WorkingHours.pcap_ISCX.csv,Flow Duration,432074,31286.0,114920519.44999997,118094191.34000002
+Wednesday-workingHours.pcap_ISCX.csv,Flow Duration,440031,31047.0,115300316.5,118112249.1
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,Total Fwd Packets,97718,2.0,17.0,47.0
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,Total Fwd Packets,127537,2.0,22.0,61.0
+Friday-WorkingHours-Morning.pcap_ISCX.csv,Total Fwd Packets,189067,2.0,21.0,63.0
+Monday-WorkingHours.pcap_ISCX.csv,Total Fwd Packets,529918,2.0,20.0,52.0
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,Total Fwd Packets,288566,2.0,20.0,50.0
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,Total Fwd Packets,168186,2.0,22.0,58.0
+Tuesday-WorkingHours.pcap_ISCX.csv,Total Fwd Packets,432074,2.0,22.0,59.0
+Wednesday-workingHours.pcap_ISCX.csv,Total Fwd Packets,440031,2.0,21.0,58.0
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,Total Backward Packets,97718,2.0,16.0,56.0
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,Total Backward Packets,127537,2.0,20.0,76.0
+Friday-WorkingHours-Morning.pcap_ISCX.csv,Total Backward Packets,189067,2.0,19.0,74.0
+Monday-WorkingHours.pcap_ISCX.csv,Total Backward Packets,529918,2.0,18.0,62.0
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,Total Backward Packets,288566,2.0,18.0,60.0
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,Total Backward Packets,168186,2.0,20.0,71.0
+Tuesday-WorkingHours.pcap_ISCX.csv,Total Backward Packets,432074,2.0,22.0,78.0
+Wednesday-workingHours.pcap_ISCX.csv,Total Backward Packets,440031,2.0,19.0,70.0
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,Flow Bytes/s,97686,2220.0356835000002,1714285.714,12300000.0
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,Flow Bytes/s,127292,5681.1762985000005,3000000.0,17708999.99999965
+Friday-WorkingHours-Morning.pcap_ISCX.csv,Flow Bytes/s,188955,5737.538149,2875000.0,25445999.999999184
+Monday-WorkingHours.pcap_ISCX.csv,Flow Bytes/s,529481,5556.2571031696,4000000.0,15500000.0
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,Flow Bytes/s,288359,19352.84468,2796214.999399977,12300000.0
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,Flow Bytes/s,168051,5024.223937,2583333.333,18500000.0
+Tuesday-WorkingHours.pcap_ISCX.csv,Flow Bytes/s,431813,2646.763009,1903381.643,15400000.0
+Wednesday-workingHours.pcap_ISCX.csv,Flow Bytes/s,439683,5390.139595,3574074.074,29500000.0
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,Flow Packets/s,97686,27.462722595000002,45454.54545,666666.6667
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,Flow Packets/s,127292,112.6337963,500000.0,2000000.0
+Friday-WorkingHours-Morning.pcap_ISCX.csv,Flow Packets/s,188955,97.9767795,500000.0,1000000.0
+Monday-WorkingHours.pcap_ISCX.csv,Flow Packets/s,529481,114.4813137876,666666.666666667,1000000.0
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,Flow Packets/s,288359,10256.41026,666666.6667,2000000.0
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,Flow Packets/s,168051,98.59988168,500000.0,1000000.0
+Tuesday-WorkingHours.pcap_ISCX.csv,Flow Packets/s,431813,120.3932847,500000.0,1000000.0
+Wednesday-workingHours.pcap_ISCX.csv,Flow Packets/s,439683,101.0049997,500000.0,1000000.0

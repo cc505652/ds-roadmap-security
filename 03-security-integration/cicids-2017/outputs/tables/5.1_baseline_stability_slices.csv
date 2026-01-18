@@ -1,0 +1,6 @@
+feature,slice_1_median,slice_2_median,slice_3_median
+Flow Duration,47520.0,28989.0,30429.0
+Total Fwd Packets,2.0,2.0,2.0
+Total Backward Packets,2.0,2.0,2.0
+Flow Bytes/s,4051.1012934816,5145.3099440000005,6630.886142
+Flow Packets/s,84.1396718553,129.7563824,128.7374079
