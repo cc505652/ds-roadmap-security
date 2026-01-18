@@ -1,0 +1,79 @@
+# Daily Log — Jan 18, 2026
+
+## Focus
+
+CICIDS Phase 5.1 — SOC Baseline Modeling (No ML)
+Robust BENIGN baselines + drift/stability validation across split CICIDS files
+
+---
+
+## Work Completed
+
+* Started Phase 5 with a SOC-native baseline-first approach (no ML introduced)
+* Loaded CICIDS 2017 dataset from **8 split day files (Mon–Fri)** and combined into a unified dataframe while preserving source context:
+
+  * added `source_file` column for drift analysis across files
+* Performed minimal SOC-safe preprocessing required for baseline computation:
+
+  * normalized column names
+  * converted infinities to NaN for numeric stability
+  * standardized and validated label column handling
+* Extracted a BENIGN-only baseline subset to model “normal” traffic behavior realistically
+* Selected stable, SOC-relevant baseline features (Phase 3.5 aligned):
+
+  * Flow duration
+  * Packet counts
+  * Rate-based telemetry (Bytes/s, Packets/s)
+* Generated robust baseline statistics using:
+
+  * median + IQR (robust)
+  * percentile thresholds (p90/p95/p99)
+  * Tukey fences for outlier awareness
+* Built baseline stability / drift visibility using SOC-style comparisons:
+
+  * file-wise median and high-quantile drift across source days
+  * slice-based median comparisons as a drift sanity check
+* Created baseline distribution plots for key features to show heavy tails and bursty BENIGN behavior
+* Fixed output saving behavior after discovering notebook was running from `/notebooks/`:
+
+  * enforced Phase 5 absolute output paths so all artifacts land under `phase-5/outputs/`
+
+---
+
+## Key Outputs / Artifacts
+
+* `phase-5/baseline_design.md`
+* `phase-5/5.1_baseline_modeling.ipynb`
+* `phase-5/outputs/tables/5.1_benign_baseline_table.csv`
+* `phase-5/outputs/tables/5.1_filewise_baseline_drift.csv`
+* `phase-5/outputs/tables/5.1_baseline_stability_slices.csv`
+* `phase-5/outputs/figures/5.1_hist_*.png`
+* `phase-5/outputs/figures/5.1_drift_median_*.png`
+
+- Additional Phase 5.1 baseline evidence figures:
+  - `phase-5/outputs/figures/5.1_drift_median_Flow_Bytes_s.png`
+  - `phase-5/outputs/figures/5.1_drift_median_Flow_Duration.png`
+  - `phase-5/outputs/figures/5.1_drift_median_Flow_Packets_s.png`
+  - `phase-5/outputs/figures/5.1_drift_median_Total_Backward_Packets.png`
+  - `phase-5/outputs/figures/5.1_drift_median_Total_Fwd_Packets.png`
+  - `phase-5/outputs/figures/5.1_hist_Flow_Bytes_s.png`
+  - `phase-5/outputs/figures/5.1_hist_Flow_Duration.png`
+  - `phase-5/outputs/figures/5.1_hist_Flow_Packets_s.png`
+  - `phase-5/outputs/figures/5.1_hist_Total_Backward_Packets.png`
+  - `phase-5/outputs/figures/5.1_hist_Total_Fwd_Packets.png`
+
+---
+
+## Key Learnings
+
+* BENIGN traffic contains heavy tails and burst spikes → robust baselines (median/IQR + quantiles) are mandatory
+* Multi-file drift validates SOC reality: “normal” behavior is not static and shifts by day/activity
+* Rate-based telemetry features are powerful but risky: they create false positives during benign bursts
+* Baselining is the foundation for detection engineering; models without baselines create noisy alert systems
+
+---
+
+## Status
+
+Phase 5.1 completed and locked.
+Baseline design + baseline drift/stability artifacts are portfolio-ready and commit-ready.
