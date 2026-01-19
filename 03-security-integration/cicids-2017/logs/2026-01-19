@@ -1,0 +1,79 @@
+# Daily Log — Jan 19, 2026
+
+## Focus
+
+CICIDS Phase 5.2 — Minimal Anomaly Detector (SOC-first, no ML flex)
+Robust anomaly scoring + threshold gating using BENIGN quantiles
+
+---
+
+## Work Completed
+
+* Implemented Phase 5.2 minimal detection layer using a **robust MAD-based anomaly scoring approach** (no heavy ML)
+* Loaded CICIDS 2017 dataset from **8 split day files** (Mon–Fri scenarios) while preserving multi-day context:
+
+  * added `source_file` column for drift-aware evaluation
+* Performed SOC-safe preprocessing required for scoring:
+
+  * normalized column names
+  * converted `±inf` values to NaN for numeric stability
+  * validated and standardized label column handling
+* Defined a compact, interpretable SOC telemetry feature set aligned with Phase 5.1 baselines:
+
+  * `Flow Duration`
+  * `Total Fwd Packets`
+  * `Total Backward Packets`
+  * `Flow Bytes/s`
+  * `Flow Packets/s`
+* Computed robust baseline parameters from BENIGN traffic:
+
+  * median + MAD per feature
+* Generated feature-level deviation signals using robust z-score:
+
+  * `|x - median| / MAD`
+* Constructed a single SOC-friendly anomaly score using max deviation aggregation:
+
+  * `anomaly_score = max(robust_z_i)`
+* Resolved subset sync issue by refreshing BENIGN/ATTACK slices after scoring:
+
+  * ensured no stale dataframe copies (prevents missing `anomaly_score`)
+* Created anomaly score distribution comparison (BENIGN vs ATTACK) to validate overlap and heavy tails
+* Selected operational thresholds using BENIGN quantiles (SOC gating knob):
+
+  * p95 / p99 / p99.5 / p99.9
+* Evaluated detector output using SOC metrics (not ML metrics):
+
+  * overall alert volume
+  * BENIGN alert rate (expected false positives)
+  * ATTACK alert rate (sanity check hit estimate)
+* Measured drift-aware alert volume by day via `source_file` breakdown
+* Previewed top alerts under strict threshold to prepare for investigation packet design (Phase 5.4)
+* Structured notebook using detailed section markdowns to match prior CICIDS phases (portfolio readability)
+
+---
+
+## Key Outputs / Artifacts
+
+* `phase-5/5.2_minimal_anomaly_detector.ipynb`
+* `phase-5/outputs/tables/5.2_baseline_params_median_mad.csv`
+* `phase-5/outputs/tables/5.2_detector_thresholds.csv`
+* `phase-5/outputs/tables/5.2_alert_volume_summary.csv`
+* `phase-5/outputs/tables/5.2_alerts_per_file.csv`
+* `phase-5/outputs/figures/5.2_score_distribution.png`
+
+---
+
+## Key Learnings
+
+* A MAD-based detector provides an interpretable anomaly score without ML complexity
+* Quantile thresholds are SOC-native because they directly control alert volume
+* BENIGN heavy tails still generate extreme scores → reinforces Phase 3.5 thesis (context dependency)
+* Multi-day variability impacts alert behavior, so drift-aware evaluation is mandatory
+* Detector scoring is triage support, not truth — gating and context will decide operational usefulness
+
+---
+
+## Status
+
+Phase 5.2 completed and locked.
+Minimal anomaly detector + SOC threshold gating artifacts are commit-ready.
