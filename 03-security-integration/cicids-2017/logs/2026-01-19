@@ -49,12 +49,17 @@ Robust anomaly scoring + threshold gating using BENIGN quantiles
 * Measured drift-aware alert volume by day via `source_file` breakdown
 * Previewed top alerts under strict threshold to prepare for investigation packet design (Phase 5.4)
 * Structured notebook using detailed section markdowns to match prior CICIDS phases (portfolio readability)
+* **Started Phase 5.3 policy foundation by defining alert engineering controls:**
+
+  * created `alert_policy.md` to formalize **threshold gating, deduplication, rate limiting, severity scoring, and investigation context requirements**
+  * framed anomaly scoring outputs as **signal candidates**, not direct alerts (SOC realism)
 
 ---
 
 ## Key Outputs / Artifacts
 
 * `phase-5/5.2_minimal_anomaly_detector.ipynb`
+* `phase-5/alert_policy.md`
 * `phase-5/outputs/tables/5.2_baseline_params_median_mad.csv`
 * `phase-5/outputs/tables/5.2_detector_thresholds.csv`
 * `phase-5/outputs/tables/5.2_alert_volume_summary.csv`
@@ -70,6 +75,7 @@ Robust anomaly scoring + threshold gating using BENIGN quantiles
 * BENIGN heavy tails still generate extreme scores → reinforces Phase 3.5 thesis (context dependency)
 * Multi-day variability impacts alert behavior, so drift-aware evaluation is mandatory
 * Detector scoring is triage support, not truth — gating and context will decide operational usefulness
+* Alert engineering requires policy controls (dedup + rate limiting + suppression) to prevent alert storms and analyst fatigue
 
 ---
 
@@ -77,3 +83,4 @@ Robust anomaly scoring + threshold gating using BENIGN quantiles
 
 Phase 5.2 completed and locked.
 Minimal anomaly detector + SOC threshold gating artifacts are commit-ready.
+Phase 5.3 groundwork started via `alert_policy.md`.
