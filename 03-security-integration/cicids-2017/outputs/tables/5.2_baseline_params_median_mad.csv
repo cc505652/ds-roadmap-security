@@ -1,0 +1,6 @@
+feature,median,mad
+Flow Duration,30996.0,30947.0
+Total Fwd Packets,2.0,0.0
+Total Backward Packets,2.0,1.0
+Flow Bytes/s,5149.77255185615,5149.77255185615
+Flow Packets/s,122.5264964,122.1376888785
