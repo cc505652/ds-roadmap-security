@@ -1,0 +1,2 @@
+threshold,threshold_value,alerts_before_gating,alerts_after_gating,reduction_ratio
+p995,16373.958700632218,33004,8,0.9997576051387711
