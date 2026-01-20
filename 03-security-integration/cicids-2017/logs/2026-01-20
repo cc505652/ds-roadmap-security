@@ -1,0 +1,79 @@
+# Daily Log — Jan 20, 2026
+
+## Focus
+
+CICIDS Phase 5.3 — Alert Gating + Dedup + Rate Limiting (SOC Engineering)
+Convert anomaly detector output into SOC-ready alerts with operational controls
+
+---
+
+## Work Completed
+
+* Built Phase 5.3 detection engineering layer to convert Phase 5.2 anomaly scores into **SOC-usable alerts**
+* Reloaded CICIDS from **8 split day files** and preserved `source_file` for drift-aware operational evaluation
+* Recomputed Phase 5.2 anomaly scoring logic inside Phase 5.3 notebook to ensure standalone reproducibility:
+
+  * BENIGN baselines (median + MAD)
+  * robust z-score per feature
+  * `anomaly_score = max(rz_feature_i)`
+* Selected an operational gating threshold using BENIGN quantiles:
+
+  * primary threshold: **p99.5**
+* Generated **signal candidates (alerts before gating)** using:
+
+  * `anomaly_score >= threshold`
+* Implemented SOC-style **entity grouping** (`group_key`) for alert consolidation:
+
+  * prioritized `(Src IP, Dst Port, Protocol, source_file)`
+  * fallback grouping using available columns
+* Implemented **deduplication policy** to collapse repeated alerts:
+
+  * kept only the **highest anomaly score per group_key**
+  * suppressed duplicates to reduce alert storms
+* Implemented **rate limiting** per entity to prevent queue flooding:
+
+  * capped max alerts per entity (`MAX_ALERTS_PER_ENTITY = 3`)
+* Added **severity scoring** to create a prioritized analyst queue:
+
+  * severity buckets: Low / Medium / High / Critical
+  * severity derived from anomaly score quantiles
+* Measured and validated SOC impact using before vs after gating evaluation:
+
+  * **alerts before gating: 33,004**
+  * **alerts after gating: 8**
+  * **reduction ratio: 99.98%**
+* Generated and saved SOC impact outputs:
+
+  * before vs after volume plot
+  * severity distribution counts
+  * file-wise alert volume after gating (`source_file`)
+
+---
+
+## Key Outputs / Artifacts
+
+* `phase-5/5.3_alert_gating_rate_limit.ipynb`
+* `phase-5/outputs/tables/5.3_alerts_before_after_gating.csv`
+* `phase-5/outputs/tables/5.3_final_alerts_after_gating.csv`
+* `phase-5/outputs/tables/5.3_severity_bucket_counts.csv`
+* `phase-5/outputs/tables/5.3_alerts_after_gating_by_file.csv`
+* `phase-5/outputs/figures/5.3_before_after_alert_volume.png`
+
+---
+
+## Key Learnings
+
+* Detector output ≠ alert. A SOC needs **policy controls** before alerts become actionable.
+* Deduplication dramatically reduces alert duplication by collapsing storm-like repeats.
+* Rate limiting prevents a single entity from dominating analyst workload.
+* Severity scoring transforms detection into a prioritized queue, improving triage realism.
+* The biggest difference between student detection vs SOC detection is **alert economics**:
+
+  * gating matters more than adding more models
+
+---
+
+## Status
+
+Phase 5.3 completed and locked.
+Alert pipeline is now SOC-aligned: signal candidates → dedup → rate limiting → severity → final alert queue.
