@@ -1,0 +1,77 @@
+# Daily Log — Jan 21, 2026
+
+## Focus
+
+CICIDS Phase 5.4 — Investigation Packets (SOC triage outputs)
+Convert gated alerts into analyst-actionable investigation objects (why fired + context + actions)
+
+---
+
+## Work Completed
+
+* Implemented Phase 5.4 “Investigation Packets” layer to convert Phase 5.3 gated alerts into **SOC-ready triage artifacts**
+* Loaded the final gated alert queue from Phase 5.3:
+
+  * `outputs/tables/5.3_final_alerts_after_gating.csv`
+* Detected and validated schema-dependent CICIDS context fields to keep the pipeline robust:
+
+  * label column (attack vs benign)
+  * entity/service fields (Src IP / Dst Port / Protocol where available)
+  * `source_file` for drift-aware context
+* Extracted per-alert “why fired” evidence from anomaly scoring:
+
+  * collected all `rz_*` feature deviation columns
+  * computed **top contributing features (Top-3)** per alert
+  * attached anomaly score + contributor values to each packet
+* Designed a standardized investigation packet structure (SOC-oriented):
+
+  * alert metadata (alert_id, signal_type, severity)
+  * why_fired section (threshold + anomaly_score + contributors)
+  * context section (entity/service/file/label)
+  * recommended analyst actions checklist
+  * confidence heuristic (Low / Medium / High)
+  * explicit limitations (simulation + missing asset identity context)
+* Generated investigation packets for all alerts after gating
+* Exported packets in SOC-friendly formats:
+
+  * JSONL (one JSON object per alert for SIEM-like pipelines)
+  * CSV (summary view for quick analyst browsing)
+* Ran packet quality checks:
+
+  * severity distribution sanity check
+  * label distribution check
+  * most common top contributor feature analysis
+* Maintained CICIDS notebook standards:
+
+  * clear markdown sections
+  * reproducible I/O paths
+  * outputs saved under Phase 5 output folders
+
+---
+
+## Key Outputs / Artifacts
+
+* `phase-5/5.4_investigation_packets.ipynb`
+* `phase-5/outputs/alerts/5.4_investigation_packets.jsonl`
+* `phase-5/outputs/alerts/5.4_investigation_packets.csv`
+
+---
+
+## Key Learnings
+
+* SOC alerts are only operationally useful when they include:
+
+  * evidence (“why fired”) + context + clear next actions
+* Investigation packets bridge detection engineering with analyst workflow:
+
+  * detection signal → alert → triage-ready object
+* Feature deviations (rz scores) provide interpretable reasoning even without ML complexity
+* Confidence must be expressed conservatively since anomaly ≠ confirmed maliciousness
+* Exporting JSONL mirrors how real SIEM/SOAR pipelines consume alerts
+
+---
+
+## Status
+
+Phase 5.4 completed and locked.
+Gated alerts now have investigation-ready packets with reasoning, context, and analyst action guidance.
