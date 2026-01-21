@@ -1,0 +1,9 @@
+alert_id,severity,anomaly_score,top_feature,top_feature_rz,source_file,label,src_ip,dst_port
+cicids-5.4-0,Critical,402152.6833220217,Flow Bytes/s,402152.6833220217,Monday-WorkingHours.pcap_ISCX.csv,BENIGN,,60210
+cicids-5.4-1,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Tuesday-WorkingHours.pcap_ISCX.csv,BENIGN,,16398
+cicids-5.4-2,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Wednesday-workingHours.pcap_ISCX.csv,BENIGN,,45926
+cicids-5.4-3,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,BENIGN,,56792
+cicids-5.4-4,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Friday-WorkingHours-Morning.pcap_ISCX.csv,BENIGN,,7350
+cicids-5.4-5,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,BENIGN,,21161
+cicids-5.4-6,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,BENIGN,,6830
+cicids-5.4-7,High,401958.4999886938,Flow Bytes/s,401958.4999886938,Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,BENIGN,,17101
