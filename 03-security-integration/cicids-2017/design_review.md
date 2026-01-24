@@ -108,15 +108,173 @@ This project intentionally evolves in disciplined stages, mirroring how detectio
 * Integrated baselining, enrichment, governance, and threat modeling
 * Mapped architecture to Azure and AWS equivalents
 
-### Phase 5 — Detection Engineering Layer
 
-* Built robust baselines (median + MAD)
-* Implemented minimal anomaly detection (interpretable, single method)
-* Added alert gating, deduplication, rate limiting, and severity
-* Generated investigation packets for analyst consumption
-* Evaluated system using SOC metrics (alert volume, workload, stability)
+## 5. Detection Engineering Layer
 
-Each phase intentionally avoids overclaiming and builds toward **operational credibility** rather than flashy results.
+The detection layer is intentionally minimal by design.
+
+Rather than relying on multiple models or opaque scoring systems, this project implements a **single, interpretable anomaly detector** supported by strong policy controls.
+
+### Baseline Modeling
+
+* Baselines are built **only from BENIGN traffic**
+* Robust statistics are used:
+
+  * median
+  * Median Absolute Deviation (MAD)
+* This choice avoids sensitivity to heavy tails and outliers
+
+Baselines are treated as **behavioral references**, not truth.
+
+### Anomaly Scoring
+
+* A robust z-score is computed per feature:
+
+  `|x − median| / MAD`
+* Feature deviations are aggregated conservatively using:
+
+  `anomaly_score = max(feature deviations)`
+
+This produces:
+
+* an interpretable score
+* no probability claims
+* no accuracy claims
+
+The detector answers only one question:
+
+> “How unusual is this flow relative to known normal behavior?”
 
 
-Then we continue.
+### 6. Alert Economics & SOC Impact
+
+Raw anomaly scores are **never alerts**.
+
+This project explicitly separates:
+
+* detection (scoring)
+* alerting (policy)
+
+### Alert Gating Controls
+
+The following SOC-native controls are applied:
+
+* **Quantile-based thresholds**
+
+  * p95 → exploratory
+  * p99 → aggressive
+  * p99.5 → production-like
+* **Deduplication**
+
+  * repeated alerts collapsed by entity
+* **Rate limiting**
+
+  * one alert per entity per window
+* **Severity scoring**
+
+  * anomaly magnitude + context weighting
+
+### Resulting Alert Economics
+
+After full gating:
+
+* alert volume collapses from tens of thousands to **single digits**
+* analyst workload drops to **minutes per day**
+* false positives remain, but are bounded and explainable
+
+This demonstrates a critical SOC principle:
+
+> A detection system succeeds when analysts trust the alerts—not when it detects everything.
+
+
+## 7. Architecture Overview
+
+The detection logic operates inside a **cloud-agnostic SOC telemetry pipeline** designed in Phase 4.
+
+### Pipeline Stages
+
+1. Telemetry sources (network flows, logs)
+2. Collection and transport
+3. Parsing and normalization
+4. Quality checks and schema enforcement
+5. Hot / cold storage with retention
+6. Enrichment and baselining
+7. Detection and alerting
+8. Investigation and response
+
+### Key Architectural Insights
+
+* Context must be added **before detection**, not after
+* Baselines belong in the enrichment layer
+* Detection logic must assume **noisy inputs**
+* Governance and integrity controls are as important as detection logic
+
+The architecture treats the SOC itself as a **high-value system under attack**, not a passive observer.
+
+
+## 8. Threat Model & Controls
+
+The telemetry pipeline is threat-modeled as an attack surface.
+
+### Key Threats Considered
+
+* Telemetry suppression (SOC blinding)
+* Baseline poisoning
+* Alert flooding (SOC denial of service)
+* Rule tampering
+* Evidence deletion or manipulation
+* Unauthorized log access
+
+### Controls Defined
+
+* RBAC separation between detection authors and operators
+* Immutable storage (WORM) for raw logs
+* Audit trails for rule changes
+* Integrity monitoring on baselines
+* Alert rate limiting and suppression windows
+
+This ensures the detection system is **defensible**, not just functional.
+
+
+## 9. What This System Can and Cannot Do
+
+### What it CAN do
+
+* Produce a small, high-confidence alert queue
+* Provide explainable alert context
+* Support analyst triage and investigation
+* Scale conceptually to real SOC environments
+* Integrate with SIEM platforms
+
+### What it CANNOT do
+
+* Guarantee detection of all attacks
+* Replace analyst judgment
+* Claim real-world accuracy metrics
+* Operate without context or governance
+* Compete with production IDS systems
+
+These limitations are intentional and explicitly documented.
+
+
+## 10. Conclusion — Why This Is SOC-Ready
+
+This project does not attempt to build a “perfect detector”.
+
+Instead, it demonstrates:
+
+* disciplined analytical progression
+* respect for data limitations
+* realistic SOC economics
+* detection engineering maturity
+* architectural and governance awareness
+
+By prioritizing **alert quality over quantity**, and **credibility over performance claims**, the system reflects how intrusion detection actually works in production environments.
+The value of this system lies not in detection novelty, but in its disciplined alignment with how real SOCs operate under uncertainty, scale, and constraint.
+
+This makes the project suitable for:
+
+* SOC analyst roles
+* detection engineering roles
+* security architecture discussions
+* consulting and solution design interviews
