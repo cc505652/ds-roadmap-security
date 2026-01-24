@@ -1,0 +1,9 @@
+source_file,alerts_after_gating,triage_minutes,triage_hours
+Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv,1,7,0.11666666666666667
+Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv,1,7,0.11666666666666667
+Friday-WorkingHours-Morning.pcap_ISCX.csv,1,7,0.11666666666666667
+Monday-WorkingHours.pcap_ISCX.csv,1,7,0.11666666666666667
+Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv,1,7,0.11666666666666667
+Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv,1,7,0.11666666666666667
+Tuesday-WorkingHours.pcap_ISCX.csv,1,7,0.11666666666666667
+Wednesday-workingHours.pcap_ISCX.csv,1,7,0.11666666666666667
