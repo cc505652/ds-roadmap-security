@@ -1,0 +1,74 @@
+# Daily Log — Jan 23, 2026
+
+## Focus
+
+CICIDS Phase 6 — Design Review & Project Packaging
+End-to-end consolidation of detection engineering work into a single, defensible design narrative
+
+---
+
+## Work Completed
+
+* Completed the **full Design Review document** for the CICIDS 2017 project:
+
+  * Articulated the core SOC problem (alert overload, false positives, analyst fatigue)
+  * Explicitly framed intrusion detection as a **detection engineering problem**, not a classification task
+* Documented **dataset constraints and limitations** as first-class design inputs:
+
+  * simulated traffic
+  * bursty attack scenarios
+  * extreme class imbalance
+  * lack of real identity and business context
+* Explained **why naïve detection approaches fail**:
+
+  * single-feature thresholds collapse under variance
+  * correlation misleads detection usefulness
+  * raw anomaly scores without policy controls cause alert storms
+* Consolidated the **full project evolution (Phase 1 → Phase 5)** into a coherent narrative:
+
+  * EDA → feature reasoning → SOC thinking → detection stress testing → architecture → detection engineering
+* Documented the **detection engineering layer**:
+
+  * robust baseline modeling (median + MAD)
+  * interpretable anomaly scoring
+  * separation of scoring and alerting
+* Detailed **alert economics and SOC impact**:
+
+  * quantile-based gating
+  * deduplication and rate limiting
+  * severity-based alert prioritization
+  * rationale for low alert volume as a design strength
+* Integrated **cloud-agnostic SOC architecture** and detection placement:
+
+  * enrichment-first detection
+  * governance and integrity controls
+* Threat-modeled the SOC telemetry pipeline:
+
+  * SOC blinding
+  * baseline poisoning
+  * alert flooding
+  * rule tampering
+* Clearly documented **system capabilities and intentional limitations**
+* Finalized a **measured, non-overclaiming conclusion** positioning the project as SOC-ready
+
+---
+
+## Key Outputs / Artifacts
+
+* `phase-6/design_review.md`
+
+---
+
+## Key Learnings
+
+* Detection credibility comes from **discipline and restraint**, not model complexity
+* Alert policy and context dominate detection quality in real SOCs
+* Honest documentation of limitations increases system trustworthiness
+* Clear narrative packaging is as important as technical implementation
+
+---
+
+## Status
+
+Phase 6 completed and locked.
+CICIDS 2017 detection engineering project is now **fully packaged, defensible, and interview-ready**.
